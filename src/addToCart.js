@@ -29,10 +29,9 @@ export function renderShoppingCart(){
     const shoppingCart = JSON.parse(localStorage.getItem("cart"))
     console.log(shoppingCart)
     const shoppingCartItem = document.querySelector(".shoppingcart-item")
-    if(shoppingCart.length === 0){
+    if(shoppingCart === null){
         shoppingCartItem.innerHTML = " "
-        const checkOutBtn = document.querySelector(".checkout-btn")
-        checkOutBtn.style.display = "none"
+
     } else{
         document.querySelector(".shoppingcart-actions").innerHTML +=`
         <a href="checkout.html" class="button checkout-btn">Proceed to Checkout</a>`

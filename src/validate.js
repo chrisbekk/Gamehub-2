@@ -103,6 +103,7 @@ button.addEventListener("click", (event)=>{
         console.log("nice")
         location.reload()
         window.location.href = "checkoutsuccess.html"
+        localStorage.removeItem("cart")
         
     }
 })
