@@ -490,6 +490,16 @@ nav{
     justify-content: space-around;
     margin-top: 3em;
 }
+ @media(max-width: 425px){
+    .shoppingcart-actions a{
+        font-size: .9rem;
+        padding: .6rem .3rem;
+        margin: 0 .5rem;
+        box-sizing: border-box;
+        text-align: center;
+    }
+ }
+
 
 .material-symbols-outlined{
     cursor: pointer;
