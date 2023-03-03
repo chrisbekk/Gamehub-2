@@ -1,10 +1,16 @@
 const cart = []
 
 let dataID = 0
+let id = 0
 
 
 export function addToCart(){
-    let item = {title: document.querySelector(".product-title").textContent, price: document.querySelector(".product-price").textContent, img: document.querySelector("img").src}
+    let item = {
+        id : id++,
+        title: document.querySelector(".product-title").textContent, 
+        price: document.querySelector(".product-price").textContent, 
+        img: document.querySelector("img").src
+    }
     cart.push(item)
     console.log(cart)
 
@@ -28,7 +34,9 @@ export function renderShoppingCart(){
         const checkOutBtn = document.querySelector(".checkout-btn")
         checkOutBtn.style.display = "none"
     } else{
-
+        document.querySelector(".shoppingcart-actions").innerHTML +=`
+        <a href="checkout.html" class="button checkout-btn">Proceed to Checkout</a>`
+        
         shoppingCart.forEach(item=>{
             
             const productCard = document.createElement("div")
@@ -38,7 +46,7 @@ export function renderShoppingCart(){
             productCard.innerHTML = `
                     <img class="product-image">
                     <p class="product-title"></p>
-                    <span class="material-symbols-outlined" role="button" aria-label="Remove item" id="remove" data-index=${dataID ++} >delete</span>
+                    <span class="material-symbols-outlined" role="button" aria-label="Remove item" id="remove" data-index=${item.id} >delete</span>
                     <p class="product-price"></p>
                    
             `
@@ -65,17 +73,28 @@ export function renderShoppingCart(){
 
 function removeCartItem(event){
     const localStorageData = JSON.parse(localStorage.getItem("cart"))
-    console.log(localStorageData)
+    console.log(localStorageData.length)
     const grabElement = event.target.parentNode
-    console.log(grabElement)
     const productName = grabElement.querySelector(".product-title").textContent
-    const currentIndex = event.target.dataset.index
-    localStorageData.splice(currentIndex, 1)
-    localStorage.setItem("cart", JSON.stringify(localStorageData))
     grabElement.remove()
     renderTotal()
     console.log(localStorageData)
-    if(localStorageData.length === 0){
+    let currentIndex = event.target.dataset.index
+
+    console.log(typeof(currentIndex))
+    localStorageData.forEach(item =>{
+        if(item.id == currentIndex){
+           let index = localStorageData.indexOf(item)
+           console.log(index)
+           localStorageData.splice(index, 1)
+
+        }
+    })
+    localStorage.setItem("cart", JSON.stringify(localStorageData))
+
+    if(localStorageData.length == 0){
+        console.log(localStorage.getItem("cart"))
+        localStorage.removeItem("cart")
         const checkOutBtn = document.querySelector(".checkout-btn")
         checkOutBtn.style.display = "none"
     }
