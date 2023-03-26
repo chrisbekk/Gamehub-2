@@ -3,7 +3,7 @@ const form = document.querySelector(".form-new-user")
 const bars = document.querySelector(".bars-menu")
 const navbarMenu = document.querySelector(".navbar-menu")
 bars.addEventListener("click", ()=>{
-    console.log("click")
+    
     bars.classList.toggle("open")
     navbarMenu.classList.toggle("show-menu")
     
@@ -28,7 +28,7 @@ function toSessionStorage(data){
 
 function validateForm(data){
     if(validateInput(data.username, 1, ".label-username") & validateInput(data.password, 8, ".label-password") & emailValidation(data, ".label-email")){
-        console.log("valid inputs")
+        
         toSessionStorage(data)
         window.location.href= "register.html"
     } else{
