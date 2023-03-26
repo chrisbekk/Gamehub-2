@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Checkout information">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+    <link href="/css/forms.css" rel="stylesheet">
+    <title>Gamehub - Register an Account</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">GAMEHUB</a>
+            <div class ="bars-menu">
+                <span class="navbar-bar"></span>
+                <span class="navbar-bar"></span>
+                <span class="navbar-bar"></span>
+                <span class="navbar-bar"></span>
+              </div>
+            <ul class="navbar-menu">
+                <a href="products.html" aria-label="To store"><li class="navbar-item">STORE</li></a>
+                <a class="navbar-item-shoppingcart" href="shoppingcart.html" aria-label="Your shopping cart"><li class="navbar-item">SHOPPING CART</li></a>
+                <a href="about.html" aria-label="About Gamehub"><li class="navbar-item">ABOUT</li></a>
+                <a href="contact.html" aria-label="Contact Information"><li class="navbar-item">CONTACT</li></a>
+            </ul>
+        </nav>
+    </header>
+
+
+        <main class="form">
+            
+                <div class="wrapper">
+                    <div class="form-container">
+                        <div class="form-container-form">
+                            <h1 class="form-header">Create an Account</h1>
+                            <div class="form-container-content">
+                                <form action="" class="form-box">
+
+                                    <div class="input-container">
+                                        <img src="/images/assets/username-icon.png">
+                                        <input type="text" class="username" id="username" required name="username" placeholder="Username">
+                                              
+                                    </div>
+
+                                    <div class="input-container">
+                                        <img src="/images/assets/email-icon.png">
+                                        <input type="email" class="email" id="email" required name="email" placeholder="E-mail">
+                                        
+                                    </div>
+
+                                    <div class="input-container">
+                                        <img src="/images/assets/password-icon.png">
+                                        <input type="password" class="password" id="password" required name="password" placeholder="Password">
+                                        
+                                    </div>
+                                </form>
+                            </div>
+                            <button type="submit" class="form-button" id="new-user-btn">Create Account</button>
+                        
+                        </div>
+                        <div class="form-container-image">
+                            <p class="form-para">Register a <span class="highlight">GAMEHUB</span> account and be rewarded with special offers </p>
+                        </div>
+                    </div>
+                
+                <!-- <form class="form-new-user" action="">
+                    
+                    
+                    <div class="form-new-user-container">
+                        <h1>Register an Account</h1>
+                        <div class="input-container">
+                            <label for="email" class="label-email">E-mail Address</label>
+                            <input type="email" class="email" placeholder="E-mail address" id="email" required name="email">
+                        </div>
+                        <div class="input-container">         
+                            <label for="username" class="label-username">Username</label>
+                            <input type="text" class="username" placeholder="Username" id="username" required name="username">  
+                        </div>
+                        <div class="input-container">
+                            <label for="password" class="label-password">Select a Password</label>
+                            <input type="password" class="password" placeholder="Password" id="password" required name="password">
+                        </div>
+
+                            <input type="submit" class="button submit" id="new-user-btn">
+                    </div>
+
+                </form> -->
+            </div>
+            
+    
+        </main>
+
+    <footer>
+        <img src="/images/assets/logo.png" alt="Gamehub Logo">
+        <p><a href="about.html">About</a></p>
+        <p><a href="contact.html">Contact Us</a></p>
+        <p>by Christian Bekkelund</p>
+    </footer>
+
+    <script src="./src/newUser.js"></script>
+    
+</body>
+</html>
