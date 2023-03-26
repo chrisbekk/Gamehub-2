@@ -1,120 +1,114 @@
-const cart = []
+const shoppingCart = {
+    items: [],
+    total: 0,
+ 
 
-let dataID = 0
-let id = 0
+    addToCart: function(shopItem){
+        const sessionCart = JSON.parse(sessionStorage.getItem("shoppingcart"))
+        //Get session storage and check if the cart is empty or not
+        if(sessionCart === null){
+            console.log(shopItem)
+            this.items.push(shopItem)
+            this.total += shopItem.price
+            shopItem.quantity = 1
+            console.log("Cart empty, adding item to cart")
+            console.log(this.total)
+            
+            sessionStorage.setItem("shoppingcart", JSON.stringify(this))
+            document.querySelector(".navbar-item-shoppingcart").style.display = "inline"
+            
 
+        } else if(sessionCart !== null){
+            console.log("Cart not empty, checking for duplicates")
+            const sessionCart = JSON.parse(sessionStorage.getItem("shoppingcart"))
+            console.log(sessionCart)
+            console.log(sessionCart.total)
+            const cartItem = sessionCart.items.find(item => item.title === shopItem.title)
+            if( cartItem !== undefined ){
+                console.log("duplicate found")
+                cartItem.quantity += 1
+                console.log(cartItem)
+                sessionCart.total += shopItem.price
+                console.log(sessionCart.total)
+                sessionStorage.setItem("shoppingcart", JSON.stringify(sessionCart))
 
-export function addToCart(){
-    let item = {
-        id : id++,
-        title: document.querySelector(".product-title").textContent, 
-        price: document.querySelector(".product-price").textContent, 
-        img: document.querySelector("img").src
-    }
-    cart.push(item)
-    console.log(cart)
+            } else{
+                const sessionCart = JSON.parse(sessionStorage.getItem("shoppingcart"))
+                console.log("no duplicates found")
+                console.log(sessionCart)
+                sessionCart.items.push(shopItem)
+                sessionCart.total += shopItem.price
+                console.log(sessionCart.total)
+                shopItem.quantity = 1
+                sessionStorage.setItem("shoppingcart", JSON.stringify(sessionCart))
+            }
+        }
+    },
 
-    if(localStorage.getItem("cart") === null){
-        localStorage.setItem("cart", JSON.stringify(cart))
-    } else{
-        const localStorageData = JSON.parse(localStorage.getItem("cart"))
-        localStorageData.push(item)
-        localStorage.setItem("cart", JSON.stringify(localStorageData))
-    }
-    
-    
-}
-
-export function renderShoppingCart(){
-    const shoppingCart = JSON.parse(localStorage.getItem("cart"))
-    console.log(shoppingCart)
-    const shoppingCartItem = document.querySelector(".shoppingcart-item")
-    if(shoppingCart === null){
-        shoppingCartItem.innerHTML = " "
-
-    } else{
-        document.querySelector(".shoppingcart-actions").innerHTML +=`
-        <a href="checkout.html" class="button checkout-btn">Proceed to Checkout</a>`
+    removeItem: function(deleteItem, cartItemElement){
         
-        shoppingCart.forEach(item=>{
+        const sessionCart = JSON.parse(sessionStorage.getItem("shoppingcart"))
+        const cartItem = sessionCart.items.find(item => item.id === deleteItem.id)
+        
+
+        if(cartItem.quantity > 1){
+            cartItem.quantity -= 1
+            sessionCart.total -= cartItem.price
+            console.log(cartItemElement)
+            cartItemElement.querySelector(".product-quantity").textContent = cartItem.quantity
+            document.querySelector(".sum-total").textContent = sessionCart.total
+            sessionStorage.setItem("shoppingcart", JSON.stringify(sessionCart))
+        } else if (cartItem.quantity === 1){
+           const currentIndex = sessionCart.items.indexOf(cartItem)
+           sessionCart.items.splice(currentIndex, 1)
+           cartItemElement.remove()
+           sessionCart.total -= cartItem.price
+           document.querySelector(".sum-total").textContent = sessionCart.total
+
+           if(sessionCart.items.length === 0){
+            console.log("empoty")
+            document.querySelector(".navbar-item-shoppingcart").style.display = "none"
+            sessionStorage.removeItem("shoppingcart")
+            document.querySelector(".button-delete").style.display = "none"
             
-            const productCard = document.createElement("div")
-            productCard.classList.add("product-card")
-    
-    
-            productCard.innerHTML = `
-                    <img class="product-image">
-                    <p class="product-title"></p>
-                    <span class="material-symbols-outlined" role="button" aria-label="Remove item" id="remove" data-index=${item.id} >delete</span>
-                    <p class="product-price"></p>
-                   
-            `
-            productCard.querySelector("img").src = item.img
-            productCard.querySelector(".product-title").textContent = item.title
-            productCard.querySelector(".product-price").textContent = item.price
-            console.log(item.img)
-            
-            shoppingCartItem.append(productCard)
-            
-            const button = document.querySelectorAll("#remove")
-            button.forEach(button =>{button.addEventListener("click", removeCartItem)
-            })
-        })
-    }
-    const totalEl = document.createElement("p")
-    totalEl.classList.add("total")
-    document.querySelector(".shoppingcart-total").append(totalEl)
-    renderTotal()
+            return
+           }
 
-    
+           sessionStorage.setItem("shoppingcart", JSON.stringify(sessionCart))
 
-}
-
-function removeCartItem(event){
-    const localStorageData = JSON.parse(localStorage.getItem("cart"))
-    console.log(localStorageData.length)
-    const grabElement = event.target.parentNode
-    const productName = grabElement.querySelector(".product-title").textContent
-    grabElement.remove()
-    renderTotal()
-    console.log(localStorageData)
-    let currentIndex = event.target.dataset.index
-
-    console.log(typeof(currentIndex))
-    localStorageData.forEach(item =>{
-        if(item.id == currentIndex){
-           let index = localStorageData.indexOf(item)
-           console.log(index)
-           localStorageData.splice(index, 1)
+           
+           
 
         }
-    })
-    localStorage.setItem("cart", JSON.stringify(localStorageData))
 
-    if(localStorageData.length == 0){
-        console.log(localStorage.getItem("cart"))
-        localStorage.removeItem("cart")
-        const checkOutBtn = document.querySelector(".checkout-btn")
-        checkOutBtn.style.display = "none"
+
+
     }
 
-}
-
-function calculateTotal(){
-    let sum = 0
-    const cartElements = document.querySelector(".shoppingcart-item")
-    console.log(cartElements)
-    let total = cartElements.querySelectorAll(".product-price")
-    total.forEach(item =>{
-        console.log(item.textContent)
-        sum += parseFloat(item.textContent)
-    })
-    return sum
 
 }
 
-function renderTotal(){
-    const totalEl = document.querySelector(".total")
-    totalEl.textContent = calculateTotal()
+export default shoppingCart
+
+
+function checkShoppingCart(){
+    const shoppingCartStatus = sessionStorage.getItem("shoppingcart")
+
+    if(shoppingCartStatus){
+        
+    } else{
+        
+    }
 }
 
+checkShoppingCart()
+
+
+const bars = document.querySelector(".bars-menu")
+const navbarMenu = document.querySelector(".navbar-menu")
+bars.addEventListener("click", ()=>{
+    console.log("click")
+    bars.classList.toggle("open")
+    navbarMenu.classList.toggle("show-menu")
+    
+  })

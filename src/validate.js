@@ -5,6 +5,14 @@ const email = document.querySelector(".email")
 const phone = document.querySelector(".phone")
 const button = document.querySelector(".button")
 
+const bars = document.querySelector(".bars-menu")
+const navbarMenu = document.querySelector(".navbar-menu")
+bars.addEventListener("click", ()=>{
+    console.log("click")
+    bars.classList.toggle("open")
+    navbarMenu.classList.toggle("show-menu")
+    
+  })
 
 const firstName = {
     required: 0,
@@ -103,7 +111,20 @@ button.addEventListener("click", (event)=>{
         console.log("nice")
         location.reload()
         window.location.href = "checkoutsuccess.html"
-        localStorage.removeItem("cart")
+        sessionStorage.removeItem("shoppingcart")
+        document.querySelector(".navbar-item-shoppingcart").style.display = "none"
         
     }
 })
+
+function checkShoppingCart(){
+    const shoppingCartStatus = sessionStorage.getItem("shoppingcart")
+
+    if(shoppingCartStatus){
+        document.querySelector(".navbar-item-shoppingcart").style.display = "inline"
+    } else{
+        document.querySelector(".navbar-item-shoppingcart").style.display = "none"
+    }
+}
+
+checkShoppingCart()

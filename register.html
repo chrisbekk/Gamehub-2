@@ -21,53 +21,82 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
-    <link href="/css/index.css" rel="stylesheet">
+    <link href="/css/forms.css" rel="stylesheet">
     <title>Gamehub - The Universe of Games</title>
 </head>
 <body>
     <header>
         <nav>
             <a href="index.html" class="logo">GAMEHUB</a>
-            <input type="checkbox" class="checkbox" id="checkbox">
-            <label for="checkbox" class="menu-icon" aria-label="navigation menu">
-                <span class="menu-element"></span>
-                <span class="menu-element"></span>
-                <span class="menu-element"></span>
-            </label>
+            <div class ="bars-menu">
+                <span class="navbar-bar"></span>
+                <span class="navbar-bar"></span>
+                <span class="navbar-bar"></span>
+                <span class="navbar-bar"></span>
+              </div>
             <ul class="navbar-menu">
                 <a href="products.html" aria-label="To store"><li class="navbar-item">STORE</li></a>
-                <a href="shoppingcart.html" aria-label="Your shopping cart"><li class="navbar-item">SHOPPING CART</li></a>
+                <a class="navbar-item-shoppingcart" href="shoppingcart.html" aria-label="Your shopping cart"><li class="navbar-item">SHOPPING CART</li></a>
                 <a href="about.html" aria-label="About Gamehub"><li class="navbar-item">ABOUT</li></a>
                 <a href="contact.html" aria-label="Contact Information"><li class="navbar-item">CONTACT</li></a>
             </ul>
         </nav>
     </header>
 
-    <main class="register">
-        <div class="wrapper">
-            <h1>SIGN IN</h1>
-            <div class="login-user-card-container">
-                <div class="login-user-card">
-                    <div class="login-user-card-logo">
-                        <img src="/images/assets/logo.png" alt="Gamehub Logo">
-                    </div>
-                    <h2>Sign In</h2>
+    <main class="form">
 
-                    
-                    <form class="login-user-card-form">
-                        <div class="login-user-card-form-item">
-                            <span class="material-symbols-outlined">account_circle</span>
-                            <input type="text" id="username" placeholder="Enter Username" required>
-                        </div>
-                        <div class="login-user-card-form-item">
-                            <span class="material-symbols-outlined">lock</span>
-                            <input type="text" id="password" placeholder="Enter Password" required>
-                        </div>
-                    </form>
-                    <a class="button" href="#">Log In</a>
+        <div class="wrapper">
+            <div class="form-container">
+                <div class="form-container-form">
+                    <h1>Create an Account</h1>
+                    <div class="form-container-content">
+                        <form action="" class="form-sign-in">
+                            <div class="input-container">
+                                <label for="username" class="label-username">
+                                    <span>Username</span>
+                                    <img src="/images/assets/username-icon.png">
+                                </label>
+                            </div>
+                            <div class="input-container">
+                                <label for="user" class="label-username">
+                                    <span>Username</span>
+                                    <img src="/images/assets/username-icon.png">
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+
                 </div>
+                <div class="form-container-image"></div>
             </div>
         </div>
+        <!-- <div class="wrapper">
+            <form class="form-sign-in" action="">
+                    
+                    
+                <div class="form-new-user-container">
+                    <h1>Log In</h1>
+
+                    <div class="input-container">         
+                        <label for="username" class="label-username">Username</label>
+                        <input type="text" class="username" placeholder="Username" id="username" required name="username">  
+                    </div>
+                    <div class="input-container">
+                        <label for="password" class="label-password">Select a Password</label>
+                        <input type="password" class="password" placeholder="Password" id="password" required name="password">
+                    </div>
+
+                        <button id="sign-in-btn">Log In</button>
+                        <a href="registerAccount.html">Not signed up? Register an account</a>
+                        
+                    </div>
+                </div>
+
+            </form>
+
+                
+            
+        </div> -->
 
     </main>
 
@@ -77,6 +106,6 @@
         <p><a href="contact.html" aria-label="Contact information">Contact Us</a></p>
         <p>by Christian Bekkelund</p>
     </footer>
-    
+    <script src="/src/signIn.js"></script>
 </body>
 </html>

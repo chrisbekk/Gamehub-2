@@ -8,3 +8,15 @@ async function fetchData() {
 }
 
 export default fetchData;
+
+function checkShoppingCart(){
+  const shoppingCartStatus = sessionStorage.getItem("shoppingcart")
+
+  if(shoppingCartStatus){
+      document.querySelector(".navbar-item-shoppingcart").style.display = "inline"
+  } else{
+      document.querySelector(".navbar-item-shoppingcart").style.display = "none"
+  }
+}
+
+checkShoppingCart()

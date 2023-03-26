@@ -3,7 +3,7 @@
     {
       "id": "01",
       "title": "Assassin",
-      "price": "599",
+      "price": 599,
       "currency": "NOK",
       "image": "./images/products/01-assassin-cover.jpg",
       "description": "Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia.Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.",
@@ -12,7 +12,7 @@
     {
       "id": "02",
       "title": "Black",
-      "price": "599",
+      "price": 599,
       "currency": "NOK",
       "image": "./images/products/02-black-cover.jpg",
       "description": "Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia.Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.",
@@ -21,7 +21,7 @@
     {
       "id": "03",
       "title": "Boxer",
-      "price": "599",
+      "price": 599,
       "currency": "NOK",
       "image": "./images/products/03-boxer-cover.jpg",
       "description": "Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia.Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.",
@@ -30,7 +30,7 @@
     {
       "id": "04",
       "title": "Cyberpunk",
-      "price": "599",
+      "price": 599,
       "currency": "NOK",
       "image": "./images/products/04-cyberpunk-cover.jpg",
       "description": "Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia.Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.",
@@ -39,7 +39,7 @@
     {
       "id": "05",
       "title": "Forge Legends",
-      "price": "599",
+      "price": 599,
       "currency": "NOK",
       "image": "./images/products/05-forge-legend-cover.jpg",
       "description": "Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia.Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.",
@@ -48,7 +48,7 @@
     {
       "id": "06",
       "title": "Furious",
-      "price": "599",
+      "price": 599,
       "currency": "NOK",
       "image": "./images/products/06-furious-cover.jpg",
       "description": "Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia.Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.",
@@ -57,7 +57,7 @@
     {
       "id": "07",
       "title": "Ping Pong",
-      "price": "349",
+      "price": 349,
       "currency": "NOK",
       "image": "./images/products/07-ping-pong-cover.jpg",
       "description": "Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia.Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.",
@@ -66,7 +66,7 @@
     {
       "id": "08",
       "title": "Racing",
-      "price": "349",
+      "price": 349,
       "currency": "NOK",
       "image": "./images/products/08-racing-cover.jpg",
       "description": "Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia.Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.",
@@ -75,7 +75,7 @@
     {
       "id": "09",
       "title": "Space Wars",
-      "price": "349",
+      "price": 349,
       "currency": "NOK",
       "image": "./images/products/09-space-wars-cover.jpg",
       "description": "Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia.Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.",
@@ -84,7 +84,7 @@
     {
       "id": "10",
       "title": "Super Duper",
-      "price": "349",
+      "price": 349,
       "currency": "NOK",
       "image": "./images/products/10-super-duper-cover.jpg",
       "description": "Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia.Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.",
