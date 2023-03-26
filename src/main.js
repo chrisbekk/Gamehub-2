@@ -6,7 +6,7 @@ const onSale = document.querySelector(".on-sale")
 const bars = document.querySelector(".bars-menu")
 const navbarMenu = document.querySelector(".navbar-menu")
 bars.addEventListener("click", ()=>{
-    console.log("click")
+    
     bars.classList.toggle("open")
     navbarMenu.classList.toggle("show-menu")
     
@@ -14,7 +14,7 @@ bars.addEventListener("click", ()=>{
 function createProductCard() {
   const productCard = document.createElement("div")
   productCard.classList.add("product-card")
-  console.log(productCard)
+  
   productCard.innerHTML = `
     <a href=>
         <img class="product-image" alt="Cover image of product"> 
@@ -27,9 +27,9 @@ function createProductCard() {
 
 async function renderProducts(){
     const products = await fetchData()
-    console.log(products)
+    
     products.forEach(product => {
-        console.log(product.title)
+        
         const productCard = createProductCard()
         productCard.querySelector("a").href = `product-details.html?product=${product.title}`
         productCard.querySelector("img").src = product.image
@@ -38,15 +38,15 @@ async function renderProducts(){
 
         switch(product.category){
             case "new release":
-                console.log("test")
+                
                 newRelease.append(productCard)
                 break;
             case "top seller":
-                console.log("seller")
+                
                 topSeller.append(productCard)
                 break;
             case "on sale":
-                console.log("sale")
+                
                 onSale.append(productCard)
                 break;
         }

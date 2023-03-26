@@ -4,7 +4,6 @@ const form = document.querySelector(".form-sign-in")
 const bars = document.querySelector(".bars-menu")
 const navbarMenu = document.querySelector(".navbar-menu")
 bars.addEventListener("click", ()=>{
-    console.log("click")
     bars.classList.toggle("open")
     navbarMenu.classList.toggle("show-menu")
     
@@ -19,11 +18,11 @@ function signIn(event){
     const sessionUser = fromSessionStorage()
 
     if(user.username === sessionUser.username & user.password === sessionUser.password){
-        console.log("Log in Success")
+        
         window.location.href = "profile.html"
         sessionStorage.setItem("loggedIn", true)
     } else{
-        console.log("Log in Failure")
+        
         isLoggedIn = false
     }
     

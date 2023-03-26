@@ -20,7 +20,7 @@ bars.addEventListener("click", ()=>{
 function createProductDetails() {
     const productDetails = document.createElement("section")
     productDetails.classList.add("product-details")
-    console.log(productDetails)
+    
     productDetails.innerHTML = `
         <div class="product-image">
             <img alt="Cover image of product">
@@ -42,8 +42,7 @@ function createProductDetails() {
 async function renderProductDetails(){
     const details = await fetchData()
     const product = details.find(product => product.title === getQueryString())
-    console.log(product)
-    console.log(product)
+
     const productDetails = createProductDetails()
     productDetails.querySelector("img").src = product.image
     productDetails.querySelector(".product-title").textContent = product.title
